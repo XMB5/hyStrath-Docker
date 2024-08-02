@@ -10,5 +10,7 @@ COPY ./3_openfoam_install.sh .
 RUN ["./3_openfoam_install.sh"]
 COPY ./4_hystrath_clone.sh .
 RUN ["./4_hystrath_clone.sh"]
+ENV USER=root
 COPY ./6_module_installation.sh .
 RUN ["./6_module_installation.sh"]
+RUN ["bash", "-c", "echo 'source /root/OpenFOAM-v1706/etc/bashrc' >> ~/.bashrc"] 
